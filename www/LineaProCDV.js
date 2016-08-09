@@ -32,7 +32,7 @@ LineaProCDV.prototype.initDT = function(connectionCallback, cardCallback, barcCa
     this.btDisconnectedCallback = btDisconnCallback;
 
     exec(null, errorCallback, "LineaProCDV", "initDT", []);
-    //alert("LineaProCDV");
+
 };
 
 LineaProCDV.prototype.barcodeStart = function() {

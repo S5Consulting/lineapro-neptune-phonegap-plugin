@@ -2,6 +2,7 @@
 //  LineaProCDV.h
 //
 //  Created by Aaron Thorp on 27.04.16.
+//  Changed by Svein Gunnar Larsen 09.08.16
 //  http://aaronthorp.com
 //
 
@@ -355,10 +356,20 @@
 - (void) rfCardDetected: (int) cardIndex info:(DTRFCardInfo *) info {
     NSLog(@"rfCardDetected (debug): cardIndex - %d, info - %@", cardIndex, [info description]);
     NSLog(@"rfCardDetected (debug): cardIndex - %d, info - %@", cardIndex, [info debugDescription]);
+
+    NSString* cardType = info.typeStr;
+    NSData* cardUID = info.UID;
+    NSString *uidString = [[NSString alloc] initWithData:cardUID encoding:NSUTF8StringEncoding];
+
+    NSString* retStr = [ NSString stringWithFormat:@"LineaProCDV.onRfDetected('%@', '%@', '%d', '%d')", cardType, uidString, info.ATQA, info.SAK];
+    [self.webViewEngine evaluateJavaScript:retStr completionHandler:nil];
 }
 
 - (void) rfCardRemoved: (int) cardIndex {
     NSLog(@"rfCardRemoved: cardIndex - %d", cardIndex);
+
+    NSString* retStr = [ NSString stringWithFormat:@"LineaProCDV.onRfRemoved('%s')", "Removed"];
+    [self.webViewEngine evaluateJavaScript:retStr completionHandler:nil];
 }
 
 - (void) sdkDebug: (NSString *) logText source:(int) source {

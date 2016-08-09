@@ -34,4 +34,7 @@
 - (void)prnPrintText:(CDVInvokedUrlCommand*)command;
 - (void)prnPrintZPL:(CDVInvokedUrlCommand*)command;
 
+- (void)startRFID:(CDVInvokedUrlCommand*)command;
+- (void)closeRFID:(CDVInvokedUrlCommand*)command;
+
 @end

@@ -18,6 +18,8 @@ var argscheck = require('cordova/argscheck'),
     this.btDisconnectedCallback = null;
     this.btGetDeviceNameCallback = null;
 
+    this.onRfDetectedCallback = null;
+    this.onRfRemovedCallback = null;
 }
 
 LineaProCDV.prototype.initDT = function(connectionCallback, cardCallback, barcCallback, cancelCallback, errorCallback, btDiscCallback, btConnCallback, btDisconnCallback, btGetDeviceNameCallback) {
@@ -33,6 +35,24 @@ LineaProCDV.prototype.initDT = function(connectionCallback, cardCallback, barcCa
 
     exec(null, errorCallback, "LineaProCDV", "initDT", []);
 
+};
+
+LineaProCDV.prototype.startRfId = function (detected, removed) {
+  this.onRfDetectedCallback = detected;
+  this.onRfRemovedCallback = removed;
+  exec(null, null, "LineaProCDV", "startRFID", []);
+};
+
+LineaProCDV.prototype.closeRfId = function () {
+  exec(null, null, "LineaProCDV", "closeRFID", []);
+};
+
+LineaProCDV.prototype.onRfDetected = function(type, uid, ataq, sak) {
+  this.onRfDetectedCallback(type, uid, ataq, sak);
+};
+
+LineaProCDV.prototype.onRfRemoved = function(data) {
+  this.onRfRemovedCallback(data);
 };
 
 LineaProCDV.prototype.barcodeStart = function() {

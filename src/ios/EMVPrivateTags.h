@@ -5,12 +5,41 @@
 #define TAG_D4_TRACK2_MASKED 0xD4
 
 
+/*
+ * Format: b
+ * Length: 1
+ */
+#define TAG_C1_CVV_ENABLED 0xC1
 
-    /*
-	 * Format: b
-	 * Length: 2
-	 */
-	#define TAG_C1_PROCESSING_RESULT 0xC1
+/*
+ * Format: ans
+ * Length: 1
+ */
+#define TAG_C2_DECIMAL_SEPARATOR 0xC2
+
+/*
+ * Format: b
+ * Length: 1
+ */
+#define TAG_C3_FORCE_ONLINE_PIN 0xC3
+
+/*
+ * Format: b
+ * Length: 3
+ */
+#define TAG_C4_MASKED_DATA_CONFIG 0xC4
+
+/*
+ * Format: b
+ * Length: 1
+ */
+#define TAG_C3_TRANSACTION_INTERFACE 0xC3
+
+/*
+ * Format: b
+ * Length: 2
+ */
+#define TAG_C1_PROCESSING_RESULT 0xC1
 
 /*
  * Format: b
@@ -78,6 +107,12 @@
 	 */
 	#define TAG_C1_TRANSACTION_RESULT 0xC1
 	
+/*
+ * Format: b
+ * Length: 1
+ */
+#define TAG_C2_CVM 0xC2
+
 	/*
 	 * Format: b
 	 * Length: 1

@@ -1,7 +1,7 @@
-lineapro-phonegap-plugin
+lineapro-neptune-phonegap-plugin
 ========================
 
-Using DTDevices SDK v1.94 (18/09/2014)
+Using DTDevices SDK v1.98 (19/11/2015)
 ## Quick start
 To start plugin need to execute 'LineaProCDV.initDT()' method.
 Recommended to add this into 'deviceready' handler.
@@ -38,12 +38,5 @@ Universal plugin for following devices:
 * Log all events
 * Start/Stop Barcode methods
 
-## Additional info
-
-Using iOS SDK from http://www.datecs.bg/en/products/Universal-iOS-SDK/8/121
-
-Tested on Cordova ver.3.3
-
 (c) Citronium, 2014
 http://citronium.com
-# lineapro-neptune-phonegap-plugin

@@ -59,6 +59,20 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)startRFID:(CDVInvokedUrlCommand*)command
+{
+    [dtdev rfInit:0x0001 error:nil];
+    CDVPluginResult* pluginResult = nil;
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)closeRFID:(CDVInvokedUrlCommand*)command
+{
+    [dtdev rfClose:nil];
+    CDVPluginResult* pluginResult = nil;
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)getConnectionStatus:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsInt:[dtdev connstate]];
